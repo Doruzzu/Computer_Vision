@@ -50,10 +50,10 @@ def training_dataset():
         label_mode='binary'
     )
 
-    # Rescaling
+
     rescale_layer = tf.keras.layers.Rescaling(scale=1 / 255.)
 
-    # Apply the rescaling by using the map method and a lambda
+
     train_dataset_scaled = train_dataset.map(lambda image, label: (rescale_layer(image), label))
 
 
